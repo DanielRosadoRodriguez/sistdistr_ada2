@@ -11,6 +11,7 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
@@ -45,15 +46,19 @@ public class UserController {
     }
 
 
-    @PayloadRoot(namespace = TARGET_NAMESPACE, localPart = "GetUserRequest")
+    @PayloadRoot(namespace = TARGET_NAMESPACE, localPart = "GetAllUsersRequest")
     @ResponsePayload
-    public GetUserResponse getUser(@RequestPayload GetUserRequest request) {
-        GetUserResponse response = new GetUserResponse();
-        User foundUser = new User();
-        Optional<UserEntity> userDTO = userService.obtenerUsuarioPorId(request.getId());
-
-        BeanUtils.copyProperties(userService.obtenerUsuarioPorId(request.getId()), foundUser);
-        response.setUser(foundUser);
+    public GetAllUsersResponse getAllUsers(@RequestPayload GetAllUsersRequest request) {
+        GetAllUsersResponse response = new GetAllUsersResponse();
+    
+        List<UserEntity> usuarios = userService.obtenerUsuarios(); // Método en tu servicio
+    
+        for (UserEntity entity : usuarios) {
+            User user = new User();
+            BeanUtils.copyProperties(entity, user);
+            response.getUsers().add(user);
+        }
+    
         return response;
     }
 

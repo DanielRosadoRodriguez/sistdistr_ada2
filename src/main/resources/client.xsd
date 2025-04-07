@@ -40,18 +40,14 @@
     </xs:element>
 
     <!-- ReadUser -->
-    <xs:element name="GetUserRequest">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="id" type="xs:long" />
-            </xs:sequence>
-        </xs:complexType>
+    <xs:element name="GetAllUsersRequest">
+        <xs:complexType />
     </xs:element>
 
-    <xs:element name="GetUserResponse">
+    <xs:element name="GetAllUsersResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="user" type="tns:user" />
+                <xs:element name="users" type="tns:user" maxOccurs="unbounded" />
             </xs:sequence>
         </xs:complexType>
     </xs:element>
