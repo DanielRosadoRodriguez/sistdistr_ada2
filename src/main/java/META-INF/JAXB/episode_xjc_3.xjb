@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="3.0" xmlns="https://jakarta.ee/xml/ns/jaxb">
+  <!--
+
+Este archivo ha sido generado por Eclipse Implementation of JAXB v3.0.0 
+Visite https://eclipse-ee4j.github.io/jaxb-ri 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2025.04.07 a las 02:19:31 PM CST 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://www.moo_rest.com/spring_app/users">
+    <schemaBindings map="false">
+      <package name="com.moo_rest.spring_app.users"/>
+    </schemaBindings>
+    <bindings scd="tns:CreateUserRequest">
+      <class ref="com.moo_rest.spring_app.users.CreateUserRequest"/>
+    </bindings>
+    <bindings scd="tns:CreateUserResponse">
+      <class ref="com.moo_rest.spring_app.users.CreateUserResponse"/>
+    </bindings>
+    <bindings scd="~tns:user">
+      <class ref="com.moo_rest.spring_app.users.User"/>
+    </bindings>
+    <bindings scd="tns:GetUserRequest">
+      <class ref="com.moo_rest.spring_app.users.GetUserRequest"/>
+    </bindings>
+    <bindings scd="tns:GetUserResponse">
+      <class ref="com.moo_rest.spring_app.users.GetUserResponse"/>
+    </bindings>
+    <bindings scd="tns:DeleteUserRequest">
+      <class ref="com.moo_rest.spring_app.users.DeleteUserRequest"/>
+    </bindings>
+    <bindings scd="tns:DeleteUserResponse">
+      <class ref="com.moo_rest.spring_app.users.DeleteUserResponse"/>
+    </bindings>
+  </bindings>
+</bindings>
+
